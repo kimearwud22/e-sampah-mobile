@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unused_import, file_names, must_be_immutable, avoid_unnecessary_containers, unnecessary_import
 
-import 'SignUp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/component/SignUp.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 void main() => (runApp(LoginPage()));
