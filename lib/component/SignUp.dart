@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, file_names, avoid_unnecessary_containers, deprecated_member_use, must_be_immutable, prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, file_names, avoid_unnecessary_containers, deprecated_member_use, must_be_immutable, prefer_typing_uninitialized_variables, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/Login.dart';
@@ -109,6 +109,56 @@ class SignUpPage extends StatelessWidget {
                       ],
                     );
                   });
+            },
+          ),
+        ),
+        Container(
+          child: TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              icon: Icon(Icons.lock),
+              labelText: "Password",
+              hintText: "Masukkan Password",
+            ),
+            onSubmitted: (value) async {
+              await showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text("Isian Data"),
+                      content: Text("Password : $value"),
+                      actions: <Widget>[
+                        FlatButton(
+                          child: Text("OK"),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        )
+                      ],
+                    );
+                  });
+            },
+          ),
+        ),
+        Container(
+          child: CheckboxListTile(
+            title: Text("Bersedia"),
+            subtitle: Text("Terima syarat dan ketentuan yang berlaku"),
+            secondary: Icon(Icons.check),
+            activeColor: Colors.red,
+            value: false,
+            onChanged: (value) {
+              print(value);
+            },
+          ),
+          ),
+        Container(
+          child: RaisedButton(
+            child: Text("Login"),
+            color: Colors.red,
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => LoginPage()));
             },
           ),
         ),
