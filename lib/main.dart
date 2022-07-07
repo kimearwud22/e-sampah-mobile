@@ -46,33 +46,13 @@ class HomePage extends StatelessWidget {
               size: 100,
               color: Color.fromARGB(255, 34, 67, 157),
             ),
-            Container(
-              child: Text(
-                'Selamat datang di aplikasi E-Sampah',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 34, 67, 157),
-                ),
+            Text(
+              'Selamat Datang Di Aplikasi E-Sampah',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 34, 67, 157),
               ),
-              margin: const EdgeInsets.only(top: 30),
-            ),
-            SizeBox(
-              height: 20,
-            ),
-            Container(
-              child: Text(
-                'Gunakan Aplikasi Ini Dengan Baik',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 34, 67, 157),
-                ),
-              ),
-              margin: const EdgeInsets.only(top: 30),
-            ),
-            SizeBox(
-              height: 20,
             ),
             Container(
               child: MaterialButton(
@@ -88,11 +68,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pop(
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginPage(),
-                    ),
+                    MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 },
               ),
@@ -107,4 +85,5 @@ class HomePage extends StatelessWidget {
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
-SizeBox({required int height}) {}
+SizeBox({required int height}) {
+}

@@ -95,7 +95,6 @@ class LoginPage extends StatelessWidget {
             ),
             margin: const EdgeInsets.only(top: 20),
           ),
-          
         ],
       ),
       margin: const EdgeInsets.only(top: 20),
@@ -108,26 +107,30 @@ class LoginPage extends StatelessWidget {
         Padding(padding: const EdgeInsets.only(top: 20)),
         InkWell(
           child: Container(
-            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.primaries[2],
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.black,
             ),
-            child: Text(
-              'Login',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+            child: MaterialButton(
+              minWidth: double.infinity,
+              height: 50,
+              color: Color.fromARGB(255, 34, 67, 157),
+              textColor: Colors.white,
+              child: Text(
+                'Login',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyContent()),
+                );
+              },
             ),
           ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MyContent()),
-            );
-          },
         ),
       ],
     );
@@ -139,6 +142,10 @@ class LoginPage extends StatelessWidget {
         Padding(padding: const EdgeInsets.only(top: 20)),
         InkWell(
           child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.black,
+            ),
             child: MaterialButton(
               minWidth: double.infinity,
               height: 50,
