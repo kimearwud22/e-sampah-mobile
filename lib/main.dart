@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, must_be_immutable, use_key_in_widget_constructors, prefer_final_fields, unused_field, deprecated_member_use, unnecessary_const, avoid_unnecessary_containers, prefer_const_constructors, override_on_non_overriding_member, unused_import
+// ignore_for_file: prefer_typing_uninitialized_variables, must_be_immutable, use_key_in_widget_constructors, prefer_final_fields, unused_field, deprecated_member_use, unnecessary_const, avoid_unnecessary_containers, prefer_const_constructors, override_on_non_overriding_member, unused_import, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/Login.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: _primaryColor,
         accentColor: _accentColor,
-        scaffoldBackgroundColor: Color.fromARGB(255, 42, 195, 15),
+        scaffoldBackgroundColor: Colors.green,
         primarySwatch: Colors.lightGreen,
       ),
       home: HomePage(),
@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('E-Sampah'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 34, 157, 97),
+        backgroundColor: Colors.green,
       ),
       body: Container(
         child: Column(
@@ -57,9 +57,12 @@ class HomePage extends StatelessWidget {
               ),
               margin: const EdgeInsets.only(top: 30),
             ),
+            SizeBox(
+              height: 20,
+            ),
             Container(
               child: Text(
-                'Gunakan Aplikasi Ini Dengan BAik',
+                'Gunakan Aplikasi Ini Dengan Baik',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -67,6 +70,9 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               margin: const EdgeInsets.only(top: 30),
+            ),
+            SizeBox(
+              height: 20,
             ),
             Container(
               child: MaterialButton(
@@ -82,9 +88,11 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pop(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
                   );
                 },
               ),
@@ -98,3 +106,5 @@ class HomePage extends StatelessWidget {
   @override
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
+
+SizeBox({required int height}) {}

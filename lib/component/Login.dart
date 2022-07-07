@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/SignUp.dart';
+import 'package:flutter_application_1/component/Content.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 void main() => (runApp(LoginPage()));
@@ -109,7 +110,7 @@ class LoginPage extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
               color: Colors.primaries[2],
             ),
             child: Text(
@@ -121,7 +122,13 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-        )
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyContent()),
+            );
+          },
+        ),
       ],
     );
   }
